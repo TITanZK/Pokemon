@@ -1,34 +1,85 @@
 <!doctype html>
-<html lang="zh">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport"
         content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover"/>
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>梦可宝</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Pikachu</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    #buttons {
+      position: fixed;
+      top: 0;
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      margin-top: 10px;
+      margin-right: 10px;
+      z-index: 20;
+    }
+
+    #buttons > button {
+      margin-bottom: 10px;
+      padding: 4px 8px;
+    }
+
+    #html {
+      position: fixed;
+      top: 0;
+      right: -240px;
+      width: 100%;
+      height: 50vh;
+    }
+
+    #container1 {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 50vh;
+      overflow: auto;
+    }
+
+    #container1::-webkit-scrollbar {
+      display: none;
+    }
+
+    #container2 {
+      display: none;
+    }
+  </style>
 </head>
 <body>
-  <div class="skin">
+<div id="container1"></div>
+<style id="container2"></style>
+<div id="buttons">
+  <button id="btnPause">暂停</button>
+  <button id="btnPlay">播放</button>
+  <button id="btnSlow">慢速</button>
+  <button id="btnNormal">中速</button>
+  <button id="btnFast">快速</button>
+</div>
+<div id="html">
+  <div class="box">
     <div class="eye left"></div>
     <div class="eye right"></div>
-    <div class="nose">
-        <div class="circle"></div>
-    </div>
-    <div class="face left"></div>
-    <div class="face right"></div>
-    <div class="mouth">
-      <div class="up">
-        <div class="lip left"></div>
-        <div class="lip right"></div>
-      </div>
-      <div class="down">
-        <div class="circle1">
-          <div class="circle2"></div>
-        </div>
-      </div>
-    </div>
+    <div class="nose"></div>
+    <div class="circle left"></div>
+    <div class="circle right"></div>
+    <div class="mouth left"></div>
+    <div class="mouth right"></div>
+    <div class="ears left"></div>
+    <div class="ears right"></div>
   </div>
-  <script src="main.js"></script>
+</div>
+<script src="main.js"></script>
 </body>
 </html>
