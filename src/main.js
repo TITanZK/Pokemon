@@ -162,33 +162,33 @@ body {
 const player = {
   id: undefined,
   time: 100,
-  ui:{
-    container1:document.querySelector('#container1'),
-    container2:document.querySelector('#container2')
+  ui: {
+    container1: document.querySelector('#container1'),
+    container2: document.querySelector('#container2')
   },
-  n:1,
+  n: 1,
   events: {
-    '#btnPause':'pause',
-    '#btnPlay':'play',
-    '#btnSlow':'slow',
-    '#btnNormal':'normal',
-    '#btnFast':'fast',
+    '#btnPause': 'pause',
+    '#btnPlay': 'play',
+    '#btnSlow': 'slow',
+    '#btnNormal': 'normal',
+    '#btnFast': 'fast',
   },
-  init:()=>{
+  init: () => {
     player.ui.container1.innerText = string.substr(0, player.n)
     player.ui.container1.innerHTML.substr(0, player.n)
     player.play()
     player.bindEvents()
   },
-  bindEvents:()=>{
-    for(let key in player.events){
-      if(player.events.hasOwnProperty(key)){//防御性编程
+  bindEvents: () => {
+    for (let key in player.events) {
+      if (player.events.hasOwnProperty(key)) {//防御性编程
         const value = player.events[key]
         document.querySelector(key).onclick = player[value]
       }
     }
   },
-  run:()=>{
+  run: () => {
     player.n += 1
     if (player.n > string.length) {
       window.clearInterval(player.id)
@@ -198,23 +198,23 @@ const player = {
     player.ui.container2.innerHTML = string.substr(0, player.n)
     player.ui.container1.scrollTop = player.ui.container1.scrollHeight
   },
-  play:()=>{
-    player.id = setInterval(player.run,player.time)
+  play: () => {
+    player.id = setInterval(player.run, player.time)
   },
-  pause:()=>{
+  pause: () => {
     window.clearInterval(player.id)
   },
-  slow:()=>{
+  slow: () => {
     player.pause()
     player.time = 300
     player.play()
   },
-  normal:()=>{
+  normal: () => {
     player.pause()
     player.time = 100
     player.play()
   },
-  fast:()=>{
+  fast: () => {
     player.pause()
     player.time = 0
     player.play()
@@ -222,3 +222,14 @@ const player = {
 }
 
 player.init()
+
+const btnMusic = document.querySelector("#btnMusic")
+const video = document.querySelector('#pikachu')
+btnMusic.onclick = () => {
+  console.log('s')
+  if (video.paused) {
+    video.play()
+  } else {
+    video.paused()
+  }
+}
