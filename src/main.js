@@ -14,7 +14,7 @@ const string = `
 }
 
 body {
-  background: #ffe600;
+  background: white;
 }
 .html{
   min-height: 100vh;
@@ -226,7 +226,6 @@ player.init()
 const btnMusic = document.querySelector("#btnMusic")
 const video = document.querySelector('#pikachu')
 btnMusic.onclick = () => {
-  console.log('s')
   if (video.paused) {
     video.play()
   } else {
